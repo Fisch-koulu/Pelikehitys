@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ovi", "Ovi\Ovi.csproj", "{735FC785-8FC4-44E9-A160-4476861CC308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruoka-annos", "Ruoka-annos\Ruoka-annos.csproj", "{7BB5887B-3561-4F72-ACCF-71A46548BFFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuolia-Kaupan", "Nuolia-Kaupan\Nuolia-Kaupan.csproj", "{05707D27-658E-4AF1-A6F7-8B451EBCC041}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seikkailijanreppu", "Seikkailijanreppu\Seikkailijanreppu.csproj", "{9FD68311-1803-4A6F-BCCF-F9C0B5132AB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robotin-Rajapinta", "Robotin-Rajapinta\Robotin-Rajapinta.csproj", "{89A427F2-5101-4F18-8075-1CF5C2D419E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruudukko-Kordinaatisto", "Ruudukko-Kordinaatisto\Ruudukko-Kordinaatisto.csproj", "{B0F20B95-C8F0-4015-9EE4-A1673A7CEC96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varitetyt-Tavarat", "Varitetyt-Tavarat\Varitetyt-Tavarat.csproj", "{72A6161F-81BB-43D8-A8B3-751346800888}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{735FC785-8FC4-44E9-A160-4476861CC308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735FC785-8FC4-44E9-A160-4476861CC308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735FC785-8FC4-44E9-A160-4476861CC308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735FC785-8FC4-44E9-A160-4476861CC308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB5887B-3561-4F72-ACCF-71A46548BFFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB5887B-3561-4F72-ACCF-71A46548BFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB5887B-3561-4F72-ACCF-71A46548BFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB5887B-3561-4F72-ACCF-71A46548BFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05707D27-658E-4AF1-A6F7-8B451EBCC041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05707D27-658E-4AF1-A6F7-8B451EBCC041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05707D27-658E-4AF1-A6F7-8B451EBCC041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05707D27-658E-4AF1-A6F7-8B451EBCC041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD68311-1803-4A6F-BCCF-F9C0B5132AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD68311-1803-4A6F-BCCF-F9C0B5132AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD68311-1803-4A6F-BCCF-F9C0B5132AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD68311-1803-4A6F-BCCF-F9C0B5132AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A427F2-5101-4F18-8075-1CF5C2D419E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A427F2-5101-4F18-8075-1CF5C2D419E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A427F2-5101-4F18-8075-1CF5C2D419E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A427F2-5101-4F18-8075-1CF5C2D419E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F20B95-C8F0-4015-9EE4-A1673A7CEC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F20B95-C8F0-4015-9EE4-A1673A7CEC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F20B95-C8F0-4015-9EE4-A1673A7CEC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F20B95-C8F0-4015-9EE4-A1673A7CEC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A6161F-81BB-43D8-A8B3-751346800888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A6161F-81BB-43D8-A8B3-751346800888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A6161F-81BB-43D8-A8B3-751346800888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A6161F-81BB-43D8-A8B3-751346800888}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9060093-81AE-4ADE-8BB6-E4DFE409C260}
+	EndGlobalSection
+EndGlobal
