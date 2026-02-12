@@ -29,7 +29,7 @@ namespace Ruoka_annos
         public Lisuke lisuke;
         public Kastike kastike;
 
-        public Ateria(Paaraaka paaraaka,  Lisuke lisuke, Kastike kastike)
+        /*public Ateria(Paaraaka paaraaka,  Lisuke lisuke, Kastike kastike)
         {
             this.paaraaka = paaraaka;
             this.lisuke = lisuke;
@@ -39,7 +39,7 @@ namespace Ruoka_annos
         public Paaraaka AnnaPaa()
         {
             return paaraaka; //voi olla myös return this.paaraaka
-        }
+        }*/
 
         public override string ToString()
         {
@@ -51,27 +51,30 @@ namespace Ruoka_annos
     {
         static void Main(string[] args)
         {
-            Paaraaka valittuP = Paaraaka.kanaa;
+            /*Paaraaka valittuP = Paaraaka.kanaa;
             Lisuke valittuL = Lisuke.perunaa;
-            Kastike valittuK = Kastike.chili;
+            Kastike valittuK = Kastike.chili;*/
+
+            Ateria at = new Ateria();
 
             // kysele käyttäjältä annoksen osat
             //jos haluaisin 3 ateriaa pitäisi tehdä for loop ja lista
             //pitäisi myös selvittää miten katsoa enum lista ja muuttaa ne otettaviksi stringeiksi
             Console.Write("Pääraaka-aine (nautaa, kanaa ja kasviksia): ");
             string valittu = Console.ReadLine();
-            TarkistaPaa(valittuP, valittu);
+            at.paaraaka = TarkistaPaa(at.paaraaka, valittu);
 
             Console.Write("Lisukkeet (perunaa, riisiä ja pastaa): ");
             valittu = Console.ReadLine();
+            at.lisuke = TarkistaLisuke(at.lisuke, valittu);
 
-            Console.Write("Kastike (pippuri, chili, tomaatti ja curry): ");
+            Console.Write("Kastike (pippuri, chili, pippuri ja curry): ");
             valittu = Console.ReadLine();
+            at.kastike = TarkistaKastike(at.kastike, valittu);
 
 
             //näytä käyttäjän annos
-            Ateria a = new Ateria(valittuP, valittuL, valittuK);
-            Console.WriteLine(a);
+            Console.WriteLine(at);
         }
 
         public static Paaraaka TarkistaPaa(Paaraaka paaraaka, string valinta)
@@ -86,6 +89,7 @@ namespace Ruoka_annos
                     return Paaraaka.kasviksia;
                 default:
                     Console.WriteLine("Ei ole listalla. Anamme kanaa.");
+                    paaraaka = Paaraaka.nautaa;
                     return paaraaka;
             }
         }
@@ -100,8 +104,26 @@ namespace Ruoka_annos
                 case "pastaa":
                     return Lisuke.pastaa;
                 default:
-                    Console.WriteLine("Ei ole listalla. Anamme kanaa.");
+                    Console.WriteLine("Ei ole listalla. Anamme perunaa.");
                     return lisuke;
+            }
+        }
+
+        public static Kastike TarkistaKastike(Kastike kastike, string valinta)
+        {
+            switch (valinta)
+            {
+                case "curry":
+                    return Kastike.curry;
+                case "hapanimelä":
+                    return Kastike.hapanimelä;
+                case "pippuri":
+                    return Kastike.pippuri;
+                case "chili":
+                    return Kastike.chili;
+                default:
+                    Console.WriteLine("Ei ole listalla. Anamme chili.");
+                    return kastike;
             }
         }
     }
