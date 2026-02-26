@@ -15,10 +15,32 @@
     public class Nuoli
     {
 
-        public Karki karki;
-        public Pera pera;
-        public float pituus;
+        private Karki karki;
+        private Pera pera;
+        private float pituus;
 
+        public Nuoli(Karki karki, Pera pera, float pituus)
+        {
+            this.karki = karki;
+            this.pera = pera;
+            this.pituus = pituus;
+        }
+
+        //vaihdetaan kärki
+        public void AsetaKarki(Karki karki)
+        {
+            this.karki = karki;
+        }
+        //vaihdetaan perä
+        public void AsetaPera(Pera pera)
+        {
+            this.pera = pera;
+        }
+        //aseta pituus
+        public void AsetaPituus(float pituus)
+        {
+            this.pituus = pituus;
+        }
 
         public float PalautaHinta()
         {
@@ -43,6 +65,7 @@
                     hinta += 5; break;
             }
             hinta += pituus * 0.05f;
+            //palauta lopuksi hinta
             return hinta;
         }
     }
@@ -51,7 +74,7 @@
     {
         static void Main(string[] args)
         {
-            Nuoli uusiNuoli = new Nuoli();
+            Nuoli uusiNuoli = new Nuoli(Karki.puu, Pera.lehti, 60f);
             string nuoliVastaus;
             float nuoliNumero;
 
@@ -59,19 +82,22 @@
             Console.Write("Minkälainen kärki (puu, teräs, timantti)?: ");
             nuoliVastaus = Console.ReadLine();
             //uusiNuoli kärki muutetaan käyttäjän antamaksi kärjeksi (jos on kirjoitettu oikean ja metodissa)
-            uusiNuoli.karki = UusiKarki(nuoliVastaus);
+            uusiNuoli.AsetaKarki(UusiKarki(nuoliVastaus));
 
             //kysyy käyttäjältä nuolen perän(sulan) materiaalin
             Console.Write("Minkälaiset sulat (lehti, kanansulka, kotkansulka)?: ");
             nuoliVastaus = Console.ReadLine();
             //sama asia kuin kärki mutta muutetaan perä käyttäjän antamaksi
-            uusiNuoli.pera = UusiPera(nuoliVastaus);
+            uusiNuoli.AsetaPera(UusiPera(nuoliVastaus));
 
             //kysyy käyttäjältä nuolen pituuden
             Console.Write("Nuolen pituus sentteinä (60-100)?: ");
-            nuoliNumero = Convert.ToSingle(Console.ReadLine());
+            nuoliVastaus = Console.ReadLine();
+            //muuttaa nuolivastauksen kokonaisluvuksi
+            nuoliNumero = float.Parse(nuoliVastaus);
+
             //käyttäjä ei antaa yli tai ali 60-100 (jos antaa niin se muuttaa numeron 60, jos alle, ja 100 jos yli)
-            uusiNuoli.pituus = Math.Clamp(nuoliNumero, 60, 100);
+            uusiNuoli.AsetaPituus(Math.Clamp(nuoliNumero, 60, 100));
 
             Console.WriteLine($"Tämän nuolen hinta on {uusiNuoli.PalautaHinta()} kultarahaa.");
         }
