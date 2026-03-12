@@ -1,4 +1,6 @@
-﻿namespace Nuolia_Kaupan
+﻿using System.Runtime.CompilerServices;
+
+namespace Nuolia_Kaupan
 {
         public enum Karki
         {
@@ -45,11 +47,31 @@
         private Pera pera;
         private float pituus;
 
+
         public Nuoli(Karki karki, Pera pera, float pituus)
         {
             this.karki = karki;
             this.pera = pera;
             this.pituus = pituus;
+        }
+
+        //jo luodut valmiit nuolet
+        public static Nuoli LuoEliittiNuoli() 
+        {
+            Nuoli uus = new Nuoli(Karki.timantti, Pera.kotkansulka, 100f);
+            return uus;
+        }
+
+        public static Nuoli LuoPerusNuoli() 
+        {
+            Nuoli uus = new Nuoli(Karki.teräs, Pera.kanansulka, 85f);
+            return uus;
+        }
+
+        public static Nuoli LuoAloittelijaNuoli() 
+        {
+            Nuoli uus = new Nuoli(Karki.puu, Pera.lehti, 70f);
+            return uus;
         }
 
         //vaihdetaan kärki
@@ -100,33 +122,65 @@
     {
         static void Main(string[] args)
         {
-            Nuoli uusiNuoli = new Nuoli(Karki.puu, Pera.lehti, 60f);
-            string nuoliVastaus;
-            float nuoliNumero;
-            uusiNuoli.Head = Karki.puu;
-            
-            //kysyy käyttäjältä nuolen perän materiaalin
-            Console.Write("Minkälainen kärki (puu, teräs, timantti)?: ");
-            nuoliVastaus = Console.ReadLine();
-            //uusiNuoli kärki muutetaan käyttäjän antamaksi kärjeksi (jos on kirjoitettu oikean ja metodissa)
-            uusiNuoli.Head = UusiKarki(nuoliVastaus);
 
-            //kysyy käyttäjältä nuolen perän(sulan) materiaalin
-            Console.Write("Minkälaiset sulat (lehti, kanansulka, kotkansulka)?: ");
-            nuoliVastaus = Console.ReadLine();
-            //sama asia kuin kärki mutta muutetaan perä käyttäjän antamaksi
-            uusiNuoli.Back = UusiPera(nuoliVastaus);
+            Console.Write("Tervetuloa nuolikauppaan.");
+            Console.Write("Haluatko:\n1. Teettää nuolen tilaustyönä?\n2. Ostaa valmiin nuolen?\nValinta: ");
 
-            //kysyy käyttäjältä nuolen pituuden
-            Console.Write("Nuolen pituus sentteinä (60-100)?: ");
-            nuoliVastaus = Console.ReadLine();
-            //muuttaa nuolivastauksen kokonaisluvuksi
-            nuoliNumero = float.Parse(nuoliVastaus);
+                Nuoli uusiNuoli = new Nuoli(Karki.puu, Pera.lehti, 60f);
+            int kumpi = int.Parse(Console.ReadLine());
+            Console.Clear();
+            if (kumpi == 1)
+            {
+                string nuoliVastaus;
+                float nuoliNumero;
 
-            //käyttäjä ei antaa yli tai ali 60-100 (jos antaa niin se muuttaa numeron 60, jos alle, ja 100 jos yli)
-            uusiNuoli.Pituus = nuoliNumero;
+                //kysyy käyttäjältä nuolen perän materiaalin
+                Console.Write("Minkälainen kärki (puu, teräs, timantti)?: ");
+                nuoliVastaus = Console.ReadLine();
+                //uusiNuoli kärki muutetaan käyttäjän antamaksi kärjeksi (jos on kirjoitettu oikean ja metodissa)
+                uusiNuoli.Head = UusiKarki(nuoliVastaus);
 
-            Console.WriteLine($"Tämän nuolen hinta on {uusiNuoli.PalautaHinta()} kultarahaa.");
+                //kysyy käyttäjältä nuolen perän(sulan) materiaalin
+                Console.Write("Minkälaiset sulat (lehti, kanansulka, kotkansulka)?: ");
+                nuoliVastaus = Console.ReadLine();
+                //sama asia kuin kärki mutta muutetaan perä käyttäjän antamaksi
+                uusiNuoli.Back = UusiPera(nuoliVastaus);
+
+                //kysyy käyttäjältä nuolen pituuden
+                Console.Write("Nuolen pituus sentteinä (60-100)?: ");
+                nuoliVastaus = Console.ReadLine();
+                //muuttaa nuolivastauksen kokonaisluvuksi
+                nuoliNumero = float.Parse(nuoliVastaus);
+
+                //käyttäjä ei antaa yli tai ali 60-100 (jos antaa niin se muuttaa numeron 60, jos alle, ja 100 jos yli)
+                uusiNuoli.Pituus = nuoliNumero;
+
+                Console.WriteLine($"\nTämän nuolen hinta on {uusiNuoli.PalautaHinta()} kultarahaa.");
+            }
+            else
+            {
+                Console.WriteLine("Valitse valmis nuoli:\n1. Eliittinuoli\n2. Aloittelijanuoli\n3. Perusnuoli\n");
+                kumpi = int.Parse(Console.ReadLine());
+                switch (kumpi)
+                {
+                    case 1:
+                        uusiNuoli = Nuoli.LuoEliittiNuoli();
+                        Console.WriteLine($"Valitsemasi nuolen hinta on {uusiNuoli.PalautaHinta()} kultarahaa.");
+                        break;
+                    case 2:
+                        uusiNuoli = Nuoli.LuoPerusNuoli();
+                        Console.WriteLine($"Valitsemasi nuolen hinta on {uusiNuoli.PalautaHinta()} kultarahaa.");
+                        break;
+                    case 3:
+                        uusiNuoli = Nuoli.LuoAloittelijaNuoli();
+                        Console.WriteLine($"Valitsemasi nuolen hinta on {uusiNuoli.PalautaHinta()} kultarahaa.");
+                        break;
+                    default:
+                        uusiNuoli = Nuoli.LuoPerusNuoli();
+                        Console.WriteLine($"Valitsemasi nuolen hinta on {uusiNuoli.PalautaHinta()} kultarahaa.");
+                        break;
+                }
+            }
         }
 
         //muutta stringin oikeaksi Enumiksi
