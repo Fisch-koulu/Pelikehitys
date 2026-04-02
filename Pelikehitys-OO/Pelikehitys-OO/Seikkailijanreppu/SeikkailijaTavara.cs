@@ -3,7 +3,7 @@
     internal class SeikkailijaTavara
     {
         //parametrit
-        public string TavaraNimi { get { return tavaraNimi; } set => tavaraNimi = value; }
+        //public string TavaraNimi { get { return tavaraNimi; } set => tavaraNimi = value; } //ei käytetä oops
         public float Paino { get { return paino; } set { paino = value; } }
         public float Tilavuus { get { return tilavuus; } set { tilavuus = value; } }
 
