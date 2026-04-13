@@ -3,7 +3,7 @@
     internal class SeikkailijaTavara
     {
         //parametrit
-        //public string TavaraNimi { get { return tavaraNimi; } set => tavaraNimi = value; } //ei käytetä oops
+        public string TavaraNimi { get { return tavaraNimi; } set => tavaraNimi = value; } //nevermind käytetään
         public float Paino { get { return paino; } set { paino = value; } }
         public float Tilavuus { get { return tilavuus; } set { tilavuus = value; } }
 
@@ -18,6 +18,10 @@
             this.tilavuus = tilavuus;
         }
 
+        public override string ToString()
+        {
+            return tavaraNimi;
+        }
     }
 
     internal class Nuoli : SeikkailijaTavara

@@ -8,17 +8,19 @@
 
             while (true)
             {
-                Console.WriteLine($"Repussa on tällä hetkellä {reppu.AnnaMaara()}/10 tavaraa, {reppu.NytPaino}/30 painoa ja {reppu.NytTilavuus}/20 tilavuus." +
+                Console.WriteLine($"Repussa on tällä hetkellä {reppu.AnnaMaara()}/10 tavaraa, {reppu.NytPaino}/30 painoa ja {reppu.NytTilavuus}/20 tilavuus.\n" +
                     $"Mitä haluat lisätä?\n" +
                     $"1 - Nuoli\n" +
                     $"2 - Jousi\n" +
                     $"3 - Köysi\n" +
                     $"4 - Vettä\n" +
                     $"5 - Ruokaa\n" +
-                    $"6 - Miekka");
+                    $"6 - Miekka\n");
 
                 string vastaus = Console.ReadLine();
                 reppu.YritaLisaa(LisaaTavara(vastaus));
+                //kertoo mitä tavaroita repussa on
+                Console.WriteLine(reppu.ToString());
             }
         }
 

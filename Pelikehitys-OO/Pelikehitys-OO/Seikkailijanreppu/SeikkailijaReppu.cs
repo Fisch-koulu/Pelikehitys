@@ -36,6 +36,27 @@ namespace Seikkailijanreppu
             return false;
         }
 
+        public override string ToString()
+        {
+
+            string sisalto = "Repussa on seuraavat tavarat: ";
+            int paljon = tavarat.Count;
+            for (int i = 0; i < paljon; i++)
+            {
+                //tarkistaako onko tavara viimeinen
+                if (i < paljon - 1)
+                {
+                    //lisää nimet sisältöön ", " kanssa
+                    sisalto += tavarat[i].ToString() + ", ";
+                } else
+                {
+                    //ei lisää ", " loppuun
+                    sisalto += tavarat[i].ToString();
+                }
+            }
+            return sisalto;
+        }
+
         public int AnnaMaara()
         {
             return tavarat.Count;
