@@ -40,7 +40,7 @@
                 }
             }
 
-            robotti.Suorita();
+            robotti.Suorita(robotti);
 
         }
     }

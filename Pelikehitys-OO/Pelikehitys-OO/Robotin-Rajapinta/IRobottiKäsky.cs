@@ -1,15 +1,15 @@
 ﻿
 namespace Robotin_Rajapinta
 {
-    public abstract class RobottiKäsky
+    public interface IRobottiKäsky
     {
-        public abstract void Suorita(Robotti robotti);
+        void Suorita(Robotti robotti);
     }
 
     //ylös
-    public class YlosKasky : RobottiKäsky
+    public class YlosKasky : IRobottiKäsky
     {
-        public override void Suorita(Robotti robotti)
+        public void Suorita(Robotti robotti)
         {
             if (robotti.OnKäynnissä == false) return;
             robotti.Y++;
@@ -17,9 +17,9 @@ namespace Robotin_Rajapinta
     }
 
     //alas
-    internal class AlasKasky : RobottiKäsky
+    internal class AlasKasky : IRobottiKäsky
     {
-        public override void Suorita(Robotti robotti)
+        public void Suorita(Robotti robotti)
         {
             if (robotti.OnKäynnissä == false) return;
             robotti.Y--;
@@ -27,9 +27,9 @@ namespace Robotin_Rajapinta
     }
     
     //oikea
-    internal class OikeaKasky : RobottiKäsky
+    internal class OikeaKasky : IRobottiKäsky
     {
-        public override void Suorita(Robotti robotti)
+        public void Suorita(Robotti robotti)
         {
             if (robotti.OnKäynnissä == false) return;
             robotti.X++;
@@ -37,9 +37,9 @@ namespace Robotin_Rajapinta
     }
 
     //vase
-    internal class VasenKasky : RobottiKäsky
+    internal class VasenKasky : IRobottiKäsky
     {
-        public override void Suorita(Robotti robotti)
+        public void Suorita(Robotti robotti)
         {
             if (robotti.OnKäynnissä == false) return;
             robotti.X--;
@@ -47,18 +47,18 @@ namespace Robotin_Rajapinta
     }
 
     //käynnistää robotin
-    internal class Kaynnista : RobottiKäsky
+    internal class Kaynnista : IRobottiKäsky
     {
-        public override void Suorita(Robotti robotti)
+        public void Suorita(Robotti robotti)
         {
             robotti.OnKäynnissä = true;
         }
     }
 
     //samuttaa robotin
-    internal class Sammuta : RobottiKäsky
+    internal class Sammuta : IRobottiKäsky
     {
-        public override void Suorita(Robotti robotti)
+        public void Suorita(Robotti robotti)
         {
             robotti.OnKäynnissä = false;
         }
