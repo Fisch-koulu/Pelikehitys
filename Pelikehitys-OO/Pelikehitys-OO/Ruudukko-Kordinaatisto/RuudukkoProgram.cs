@@ -6,8 +6,10 @@
         {
             Koordinaatti yksi = new Koordinaatti(0,0);
             Koordinaatti kaksi = new Koordinaatti(-1,0);
+            Koordinaatti kolme = new Koordinaatti(1,0);
 
             yksi.Tarkistus(kaksi);
+            yksi.Tarkistus(kolme);
         }
     }
 
